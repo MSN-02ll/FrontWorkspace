@@ -1,0 +1,13 @@
+#container1.highlight{background-color: yellow;}
+div>p{
+    color: red;
+}
+pre>p{
+    color: pink;
+}
+input[type=text]{
+    border: 1px solid blue;
+}
+input[type=password]{
+    border: 1px solid blue;
+}
