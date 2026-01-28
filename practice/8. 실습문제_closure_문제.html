@@ -17,7 +17,21 @@
 	<button onclick="addFunc();">실행</button>
 	<script>
 		function mkAddFunc (){
-			
+			var sum = 0; //클로저에 저장될 누적 합
+
+			return function(){
+				const input = document.querySelector("#myadder");
+				value = input.value;
+				num = Number(value);
+
+				if(isNaN(num)){
+					return; // 숫자가 아니면 무시
+				}
+
+				 sum += num;
+				 alert(sum);
+
+			};
 		} 
 
 		var addFunc = mkAddFunc();
