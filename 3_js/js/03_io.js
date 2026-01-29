@@ -1,111 +1,52 @@
-/* 
-    document 객체
-     - 작성한 html의 태그를 파싱하여, 변환된 js object를 가지고 있는 객체
-     - DOM : Document Object Model
-*/
-document.querySelector("#id").onclick = function (){
-    //  id와 일치하는 요소를 선택하는 선택자 함수
-    // 1. getElementById('아이디명')
-    var li = document.getElementById("myli2"); // id값과 일치하는 1개 요소 선택
-    
-    // 2. querySelctor('css선택자') css선택자와 일치하는 요소 1개 선택
-    li = document.querySelector("#myli2");
+confirmBtn.onclick = function(){
+    // confirm : 확인/취소버튼을 통해 논리적인 처리를 지원하는 팝업창
+    var bool = confirm("정말 삭제하시겠습니까?");
+    console.log(bool);
+    if(bool){
+        // 파일삭제 로직..
+        // alert : 메세지 내용을 출력하는 팝업
+        alert("파일을 삭제했습니다.")
+    }
+};
 
-    console.log(li);
-    console.dir(li); // 객체구조 열람 메서드
+promptBtn.onclick = function(){
+    // prompt : 사용자로부터 문자열 입력을 받을 수 있는 모달
+    var name = prompt("당신의 이름은 무엇입니까?");
+    console.log(name); // 값이 있는 경우, 값이 없는 경우 (null, '')
 
-    // 선택한 요소의 스타일 속성 변경
-    li.style.color = '#fff';
-    li.style.backgroundColor = 'magenta';
+    // 자바스크립트에서는 "값이 존재하는 경우" true, 값이 존재하지 않는 경우 false로 처리
+    if(!name){
+    // if(name == null || name == ""){
+        name = prompt("올바른 이름을 입력하세요.");
+    }else{
+        alert("안녕하세요 !! "+name+"님 !!");
+    }
+};
 
+innerH.onclick = function(){
     /* 
-        3. id속성값으로 접근하기.
-         - 브라우저는(몇몇 브라우저 제외) id값의 요소를 전역변수형태로 등록
-           하기 때문에 id속성값을 통해 요소를 바로 획득할 수 있다.
-           단, 모든 브라우저에서 지원하지 않고, 또다른 변수와 이름이 충돌될 수 있기 때문에
-           주의해야 한다. 
+        innerHTML : 각 HTML태그의 content영역을 의미한다.
+         - getter방식 : html이 포함된 content를 반화
+         - setter방식 : 주어진 문자열을 html로 변환하여 출력
     */
-   myli2.style.color = 'red';
+    var str = "<h1>치킨먹고싶다</h1><script>alert('hello');</script>"
+    wrapper.innerHTML = str; // setter방식
+    console.log(wrapper.innerHTML); // getter방식
 };
 
-document.querySelector("#tag-name").onclick = function(){
-    // 태그명 기준 요소 선택
-    // 1. getElementsByTagName : 배열형태의 데이터 반환
-    var liArr = document.getElementsByTagName("li");
-    
-    // HTMLCollection은 생긴건 배열이나, 배열의 유용한 메서드들은
-    // 일부만 존재하는 유사배열이다.
-    console.log(liArr);
-    
-    // 2. querySelectorAll(태그명선택자)
-    liArr = document.querySelectorAll("li");
-    
-    // NodeList도 유사배열이나, 유용한 메서드들을 지원한다.
-    console.log(liArr);
-
-    for (let index = 0; index < liArr.length; index++) {
-        console.log(liArr[index]);
-
-        liArr[index].style.color = "rgb(130,220,50)";
-        liArr[index].style.backgroundColor = "magenta";
-    }
-
-    // 배열의 유용한 메서드 1번
-    liArr.forEach((li) =>{
-        li.style.color = "white";
-    });
+innerT.onclick = function(){
+    /* 
+        innerText/textContent : content영역 안의 "문자"요소만을 가져오는 속성
+    */
+    var str = "<h1>배고파요..</h1>"
+    wrapper.textContent = str;
+    wrapper.innerText = str; // setter방식
+    console.log(wrapper.innerText); // getter방식
 };
 
-document.querySelector("#class-name").onclick = function(){
-    // 클래스명으로 요소를 선택하는 방법들
-    var groups = document.getElementsByClassName("group");
-    groups = document.querySelectorAll(".group");
-
-    // 버튼을 누를때마다 선택한 요소의 배경색을 바꾸기
-    for (var i = 0; i < groups.length; i++) {
-        var li = groups[i];
-        var current = li.style.backgroundColor;
-        if(current != 'springgreen'){
-            li.style.backgroundColor = 'springgreen';
-        }else{
-            li.style.backgroundColor = 'white';
-        }
-    }
-};
-
-document.querySelector("#name-selector").onclick = function(){
-    // 체그한 체그박스의 값들을 가져오기.
-    var hobbies = document.getElementsByName("hobby");
-    hobbies = document.querySelectorAll("input[name=hobby]");
-    console.log(hobbies);
-
-    for (let i = 0; i < hobbies.length; i++) {
-        var hobby = hobbies[i];
-        // console.dir(hobby);
-
-        // 체크박스의 체크여부를 관리하는 속성
-        if(hobby.checked){
-            console.log(hobby.value);
-        }
-    }
-};
-
-/* 
-    #userEmail을 입력하고, 확인을 눌렀을때 사용자 입력값을 출력하세요.
-     - 아이디로 접근
-     - 태그명으로 접근
-     - name값으로 접근
-*/
-document.querySelector("#email-confirm").onclick = function(){
-    var userEmail = document.querySelector("#userEmail");
-    console.log(userEmail.value);
-
-    var inputArr = document.querySelectorAll("input");
-    console.log(inputArr[7].value);
-
-    var userEmail2 = document.querySelector("input[name=userEmail]");
-    console.log(userEmail2.value);
-    console.log(userEmail2);
-
-    
+outerH.onclick = function(){
+    // outerHTML : 선택된 요소의 내부 content값 + 선택된 요소값 하여
+    // 반환(getter)하거나 저장(setter)하는 속성
+    console.log(wrapper.outerHTML);
+    wrapper.outerHTML = "<mark>붕어빵먹고싶어요.</mark>";
 }
