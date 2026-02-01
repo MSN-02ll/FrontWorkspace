@@ -10,6 +10,7 @@
     margin: 10px 0;
   }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
 </head>
 <body>
   <h1>@실습문제_이벤트</h1>
@@ -35,7 +36,35 @@
     <button type="button" data-url='https://www.w3schools.com'>와삼</button>
   </div>
   <script>
-  
+    $(function(){
+    
+      const btnData = [
+        {text: "네이버", url: "https://www.naver.com"},
+        {text: "구글", url: "https://www.google.com"},
+        {text: "KH", url: "https://www.iei.or.kr"},
+        {text: "와삼", url: "https://www.w3schools.com"}
+      ];
+
+      $("#btn-generate").click(function(){
+        const $wrapper = $(".btn-wrapper");
+          $wrapper.empty();
+
+          btnData.forEach(function(item){
+            const $btn = $("<button>", {
+              type: "button",
+              text: item.text,
+              "data-url":item.url
+            });
+
+            $btn.click(function(){
+              location.href = $(this).data("url");
+            });
+
+            $wrapper.append($btn).append("&nbsp;");
+          });
+        });
+    });
+
   </script>
 
 </body>
