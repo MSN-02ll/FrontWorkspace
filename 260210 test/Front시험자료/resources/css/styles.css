@@ -1,0 +1,67 @@
+/* 공용 스타일 작성 시작*/
+.container{
+    display: inline;
+}
+
+.container>div:first-of-type{
+    background-color:#2C5AE9;
+    height: 30%;
+    width: 100%;
+    padding-top: 1%;
+    margin-top: 1%;
+    
+}
+.container>div:nth-of-type(2){
+    background-color:#F4F4F4;
+    height: 70%;
+    width: 100%;
+    padding-left: 15%;
+}
+#bt{
+    background-color: #333333;
+    color: #FFFFFF;
+}
+/* 공용 스타일 작성 끝*/
+
+/* Header 스타일 작성 시작*/
+.header{
+    color: #FFFFFF;
+    text-align:center
+}
+.header>h3{
+ display: inline;
+}
+
+
+/* Header 스타일 작성 끝*/
+
+/* 상품 스타일 작성 시작*/
+.main{
+    display: inline-flex;
+}
+#box{
+    border: 1px black;
+    background-color: #FFFFFF;
+    margin-left: 5%;
+}
+/* 상품 스타일 작성 끝*/
+
+/* 장바구니 스타일 작성 시작*/
+.buybox{
+    background-color: #FFFFFF;
+    width: 25%;
+    height: 80%;
+}
+/* 장바구니 스타일 작성 끝*/
+
+/* 푸터 스타일 작성 시작*/
+.footer{
+    background-color: #333333;
+    color: #FFFFFF;
+    height: 100;
+    text-align:center;
+    padding: 1%;
+    font-size: 9pt;
+}
+/* 푸터 스타일 작성 끝*/
+
