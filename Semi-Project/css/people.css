@@ -1,0 +1,39 @@
+/*상하 6:8 구조*/
+.layout{
+    width: 100%;
+    margin-top:40px;
+
+    display:grid;
+    grid-template-rows: 6fr 8fr;
+
+    gap:20px;
+    min-height:800px;
+}
+
+/*상단 3:7 좌우 분할*/
+.top-area{
+    display:grid;
+    grid-template-columns: 3fr 7fr;
+    
+}
+/*상단 왼쪽*/
+.top-left{
+    background-color:blue;
+    border-radius:20px;
+    padding:20px;
+}
+
+/*상단 오른쪽*/
+.top-right{
+    background-color: chartreuse;
+    border-radius:20px;
+    padding:20px;
+}
+
+
+/*하단*/
+.bottom-area{
+    background-color: aqua;
+    border-radius:12px;;
+    padding: 10px;
+}

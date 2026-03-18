@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resources/css/styles.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <!-- 
+     1. 제목: KH Shopping Mall- 푸른색 바
+     2. 배경은 살짝 어두운 흰색
+     2. 상품명검색 바, 검색버튼
+     3. 중간 제목: 상품 목록
+     4. 작은상자(흰색), 이미지, 제목, 가격, 장바구니담기 버튼
+     5. 오른쪽 장바구니(흰색), Total 0원
+     6. 하단 짙은 회색 바, 글자색 흰색-->
+    <header class = "header">
+        <h3>KH Shopping Mall</h3>
+        <input type="text" placeholder="상품명 검색" name="sp" id="sp">
+        <input type="button" value="검색" id="bt">
+    </header>
+    <main class = "main">
+        <aside class="buybox">
+            <h3>장바구니
+            </h3>
+            <p>Total 0원</p>
+        </aside>
+        <h3>상품 목록</h3>
+        <div class="box">
+            <img src="./resources/images/java.jpg" width="100%" height="250">
+            <p class="name">Do it ! 자바프로그래밍 입문</p>
+            <p class="price">15500원</p>
+            <input type="button" value="장바구니 담기" class="bt2"> 
+        </div>
+        <div class="box">
+            <img src="./resources/images/oracle.jpg" width="100%" height="250">
+            <p class="name">Do it ! 오라클로 배우는 데이터 베이스 입문</p>
+            <p class="price">20000원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div>
+        <div class="box">
+            <img src="./resources/images/react.jpg" width="100%" height="250">
+            <p class="name">Do it ! 리액트 네이티브 앱 모던 웹 개발 입문</p>
+            <p class="price">44200원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div>
+        <div class="box">
+            <img src="./resources/images/html.jpg" width="100%" height="250">
+            <p class="name">Do it ! HTML+CSS+자바스크립트 웹표준의 정석</p>
+            <p class="price">30000원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div>
+        <div class="box">
+            <img src="./resources/images/jsp.jpg" width="100%" height="250">
+            <p class="name">JSP 웹 프로그래밍과 스프링 프레임워크</p>
+            <p class="price">27000원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div> 
+        <div class="box">
+            <img src="./resources/images/react200.PNG" width="100%" height="250">
+            <p class="name">리액트 200제</p>
+            <p class="price">22500원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div> 
+        <div class="box">
+            <img src="./resources/images/js.png" width="100%" height="250">
+            <p class="name">Do it ! 자바스크립트 입문</p>
+            <p class="price">16200원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div> 
+        <div class="box">
+            <img src="./resources/images/node.png" width="100%" height="250">
+            <p class="name">NODE.js 프로그래밍 입문</p>
+            <p class="price">32400원</p>
+            <input type="button" value="장바구니 담기" class="bt2">
+        </div>
+    </main>
+    <footer class = "footer">
+        <p>Ⓒ 2024 KH Shoping Mall. All rights reserved.</p>
+    </footer>
+    <script>
+  
+  // 1. 요소 가져오기
+  // 2. 키워드가 비어있으면 전부 표시
+  // 3. 포함 여부로 표시/숨김
+  // 4. 버튼 클릭 검색
+  // 5. Enter로 검색
+
+  const input = document.querySelector('#sp');
+  const btn = document.querySelector('#bt');
+  const cards = document.querySelectorAll('.box');
+
+  function filterProducts() {
+    const keyword = input.value.trim().toLowerCase();
+
+    cards.forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const title = nameEl ? nameEl.textContent.trim().toLowerCase() : '';
+
+      
+      if (keyword === '') {
+        card.style.display = 'block'; 
+        return;
+      }
+
+      if (title.includes(keyword)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  btn.addEventListener('click', filterProducts);
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      filterProducts();
+    }
+  });
+
+</script>
+</body>
+</html>

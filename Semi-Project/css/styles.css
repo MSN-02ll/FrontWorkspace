@@ -1,0 +1,118 @@
+/* 공용 스타일 */
+body{
+    margin: 0;
+    min-height: 130vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header 스타일 */
+.header{
+    flex: auto;
+    background-image: url("/Semi-Project/resources/Header.png");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    gap: 3px;
+    padding-right: 10px 10px;
+}
+.header-left{
+    display:flex;
+    align-items: center;
+    padding-left: 10px;
+}
+/* .logo img{
+    height: 30px;
+    object-fit: contain;
+} */
+.header-right{
+    padding-right: 10px;;
+}
+.bt1{
+    display: inline-block;
+    padding:3px 5px;
+
+    background-color: white;
+    border-radius: 6px;
+
+    text-decoration:none;
+    color:black;
+}
+
+/* Main 스타일 */
+.main{
+    flex: 1;
+    background-image: url("/Semi-Project/resources/Main.png");
+    background-size: cover;
+    background-position: center bottom;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* footer 스타일 */
+.footer{
+    flex: auto;
+    background-color: black;
+    color: white;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*social-links(logo)*/
+.social-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top:20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.bt2{
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    width: 30px;   
+    height: 30px;
+
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    padding: auto;
+}
+.bt2 img{
+    width: 28px;
+    height:28px;
+    object-fit:contain;
+    display: block;
+
+    filter:invert(1) brightness(1);
+}
+
+/*info-table*/
+.info-table{
+    margin-right: 30px; 
+    margin-top: 20px;
+}
+.info-table-head th,
+.info-table-head td{
+    padding-right: 50px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 12pt;
+    
+}
+.info-table-body th,
+.info-table-body td{
+    padding-right: 50px;
+    padding-bottom: 10px;
+    font-size: 10pt;
+    color:darkslateblue;
+    
+} 

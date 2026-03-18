@@ -1,67 +1,93 @@
 /* 공용 스타일 작성 시작*/
-.container{
-    display: inline;
-}
-
-.container>div:first-of-type{
-    background-color:#2C5AE9;
-    height: 30%;
-    width: 100%;
-    padding-top: 1%;
-    margin-top: 1%;
-    
-}
-.container>div:nth-of-type(2){
-    background-color:#F4F4F4;
-    height: 70%;
-    width: 100%;
-    padding-left: 15%;
-}
-#bt{
-    background-color: #333333;
-    color: #FFFFFF;
+body{
+    margin: 0;
 }
 /* 공용 스타일 작성 끝*/
 
 /* Header 스타일 작성 시작*/
 .header{
+    background-color:#2C5AE9;
+    height: 10%;
+    width: 100%;
     color: #FFFFFF;
-    text-align:center
+    text-align:center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-.header>h3{
- display: inline;
+#sp{
+    width: 700px;
 }
-
-
+#bt{
+    background-color: #333333;
+    color: #FFFFFF;
+}
 /* Header 스타일 작성 끝*/
 
 /* 상품 스타일 작성 시작*/
 .main{
-    display: inline-flex;
+    background-color:#F4F4F4;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 80px;
+    padding-right: 80px;
+    overflow: auto;
 }
-#box{
-    border: 1px black;
+
+.box{
     background-color: #FFFFFF;
-    margin-left: 5%;
+    float:left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding: 5px 15px 1px;;
+    height: 350px;
+    width: 200px;
 }
+.name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0px;
+  font-weight: bold;
+}
+.price{
+    margin: 0px;
+}
+.bt2{
+    background-color: #333333;
+    color: #FFFFFF;
+    font-size: 9pt ;
+    width: 100%;
+    padding: 5px;
+}
+
 /* 상품 스타일 작성 끝*/
 
 /* 장바구니 스타일 작성 시작*/
 .buybox{
     background-color: #FFFFFF;
-    width: 25%;
-    height: 80%;
+    width: 20%;
+    height: 600px;
+    float:right;
+    margin-top: 3%;
+    margin-right: 6%;
+    margin-left: 4%;
 }
 /* 장바구니 스타일 작성 끝*/
 
 /* 푸터 스타일 작성 시작*/
 .footer{
     background-color: #333333;
+    height: 5%;
+    width: 100%;
     color: #FFFFFF;
-    height: 100;
-    text-align:center;
-    padding: 1%;
     font-size: 9pt;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 1px 10px;
+
 }
 /* 푸터 스타일 작성 끝*/
+
 
