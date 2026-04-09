@@ -16,10 +16,11 @@ zoo = {
         height : 180.5
     }
 };
-let response :
- | [200, 'response success']
- | [404, 'Page not found']
- | [500, 'sever error'];
+let response : readonly[number,string];
+response = [200 , "response success"];
+response = [404, "Page not found"];
+response = [500, "server error"];
+//response = [500, "server error", error];
 
 let array:(number| string| boolean| undefined|{name: string})[];
 array = [12345, 'mkm', true, undefined]; // ok
@@ -29,8 +30,8 @@ array.push({name : 'mkm'}); // ok
 let favorite:'치킨'|'햄버거'; 
 favorite = '치킨'; // ok
 favorite = '햄버거'; // ok 
-favorite = '피자'; // x
-favorite = '짜장면'; // x
+//favorite = '피자'; // x
+//favorite = '짜장면'; // x
 
 //Q1. test1 변수에는
 //    undefined를 넣어도 문제가 없습니다.
@@ -40,8 +41,8 @@ favorite = '짜장면'; // x
 //    test1의 타입은 ?
 let test1: string | undefined  = undefined; // ok
 test1 = '1234'; // ok
-test1 = 1234; // compile error
-test1 = true; //compile error
+//test1 = 1234; // compile error
+//test1 = true; //compile error
 
 //Q2. test2 변수에는 모든 값을 담을 수 있습니다.
 //    true, 1234, undefined등을 넣어도 문제가 없습니다.
@@ -56,7 +57,9 @@ test1 = test2; // ok
 //    test1에 test3를 담으면 컴파일 에러가 발생합니다.
 //    test3은 UnionType이 아닙니다.
 //    test3의 타입은?
-let test3 : ??? = undefined; // ok
+let test3 : undefined|number|boolean = undefined; // ok
 test3 = 1234; // ok
 test3 = true; // ok
-test1 = test3; // compile error
+//test1 = test3; // compile error
+
+export default print;
