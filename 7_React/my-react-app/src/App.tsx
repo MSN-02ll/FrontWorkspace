@@ -16,6 +16,7 @@ import { UserDetail, UserList, VariableRoute } from './02_react_advanced/07_Vari
 import ContextApi from './03_global_state/1.context/Context'
 import Counter from './03_global_state/2.redux/pages/counter'
 import TodoList from './03_global_state/2.redux/pages/toDoList'
+import PokemonSearch from './practice/5.PocketmonSearch'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -53,7 +54,7 @@ function App() {
         <Route path="/context" element ={<ContextApi/>}/>
         <Route path="/counter" element ={<Counter/>}/>
         <Route path="/redux" element ={<TodoList/>}/>
-
+        <Route path="/poketmon" element ={<PokemonSearch/>}/>
         <Route path="*" element={
           <div>
             <h1>잘못된 페이지입니다.</h1>
@@ -96,6 +97,9 @@ function App() {
           </li>
           <li>
             <Link to="/redux">Redux</Link>
+          </li>
+          <li>
+            <Link to="/poketmon">포켓몬</Link>
           </li>
         </nav>
     </>
