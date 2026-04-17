@@ -17,6 +17,8 @@ import ContextApi from './03_global_state/1.context/Context'
 import Counter from './03_global_state/2.redux/pages/counter'
 import TodoList from './03_global_state/2.redux/pages/toDoList'
 import PokemonSearch from './practice/5.PocketmonSearch'
+import ArrayDataBinding from './01_react_basic/03.ArrayBinding'
+import SingUpForm from './02_react_advanced/03_CustomHook'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,6 +40,7 @@ function App() {
       <AxiosGet/>
       <AxiosPost/>*/}
       <Header/>
+     
 
       <Routes>
         <Route path='/' element={<div>메인 페이지</div>} />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/counter" element ={<Counter/>}/>
         <Route path="/redux" element ={<TodoList/>}/>
         <Route path="/poketmon" element ={<PokemonSearch/>}/>
+        <Route path="/signup" element ={<SingUpForm/>}/>
         <Route path="*" element={
           <div>
             <h1>잘못된 페이지입니다.</h1>
@@ -69,7 +73,7 @@ function App() {
             {/* <a href="/">a태그로 이동하기</a> */}
           </div>
         } />
-      </Routes>
+       </Routes>
       <nav className='nav'>
           <li>
             <Link to="/">메인페이지</Link>
@@ -100,6 +104,9 @@ function App() {
           </li>
           <li>
             <Link to="/poketmon">포켓몬</Link>
+          </li>
+          <li>
+            <Link to="/signup">회원가입</Link>
           </li>
         </nav>
     </>
