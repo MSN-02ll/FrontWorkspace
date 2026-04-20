@@ -1,10 +1,10 @@
 'use client'
 
-import useInput from "@/app/hook/useInput";
+import useInput from "@/app/hooks/useInput";
 import { Menu } from "@/app/type/menu";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import RadioGroup from "./RadioGroup";
+import RadioGroup from "../RadioGroup";
 import { editMenu } from "@/app/api/menuApi.client";
 
 interface Props {

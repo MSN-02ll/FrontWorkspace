@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import Providers from "./components/Providers";
 
 /**
  *  #1. app/layout.tsx
@@ -27,12 +28,14 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <div id="container">
+          <Providers>
           <Header/>
           <section id="content">
             <div id="menu-container" className="text-center">
               {children}
             </div>
-          </section>          
+          </section> 
+          </Providers>         
         </div>
       </body>
     </html>
