@@ -17,7 +17,7 @@ export default function UserInfoInitializer(){
     useEffect(()=>{
         if(pathname === '/login' || pathname === '/signup'||pathname === '/oauth2/success')
             return;
-        api.get("/quth/me")
+        api.get("/auth/me")
             .then(res => {
                 const userData = res.data;
                 dispatch(loginSuccess(userData))
